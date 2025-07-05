@@ -142,12 +142,10 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {"ACCESS_TOKEN_LIFETIME": timedelta(minutes=30)}
 
 CORS_ALLOWED_ORIGINS = [
-"https://domain.com",
-"https://api.domain.com",
+"https://blogverse-u8ek.onrender.com",
 "http://localhost:5173",
 "http://localhost:5174",
 "http://localhost:5175",
-"https://blogverse-u8ek.onrender.com",
 ]
 
 CORS_ALLOW_HEADERS = [
