@@ -46,13 +46,17 @@ def create_blog(request):
     print("DEBUG serializer errors:", serialized.errors) 
     return Response(serialized.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['GET'])
+@api_view(['GET', 'OPTIONS'])
 def blog_list(request):
+    if request.method == 'OPTIONS':
+        return Response(status=status.HTTP_200_OK)
+
     blogs = Blog.objects.all()
     paginator = BlogPagination()
     paginated_blog = paginator.paginate_queryset(blogs, request)
-    serialized = BlogSerializer(paginated_blog, many = True)
+    serialized = BlogSerializer(paginated_blog, many=True)
     return paginator.get_paginated_response(serialized.data)
+
 
 @api_view(['GET'])
 def get_blog(request, slug):
