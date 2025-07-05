@@ -48,6 +48,8 @@ def create_blog(request):
 
 @api_view(['GET', 'OPTIONS'])
 def blog_list(request):
+    print(f"Received {request.method} on page: {request.query_params.get('page')}")
+
     if request.method == 'OPTIONS':
         return Response(status=status.HTTP_200_OK)
 
