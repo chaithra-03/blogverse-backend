@@ -147,7 +147,7 @@ CORS_ALLOWED_ORIGINS = [
 "http://localhost:5173",
 "http://localhost:5174",
 "http://localhost:5175",
-'https://blogverse-rh7m.onrender.com'
+"https://blogverse-u8ek.onrender.com",
 ]
 
 CORS_ALLOW_HEADERS = [
